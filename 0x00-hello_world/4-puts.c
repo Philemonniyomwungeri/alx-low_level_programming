@@ -2,7 +2,7 @@
 
 /**
  * main - Entry point of the program
- *
+ *puzzle, followed by a newline
  * Return: Always 0 (success)
  */
 int main(void)
