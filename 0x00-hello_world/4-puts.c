@@ -1,12 +1,14 @@
 #include <stdio.h>
 
 /**
- * main - A program that print a line using the printf function
- * Return: 0 (Success)
+ * main - print "programming is like building a multilingual
+ * puzzle, followed by a newline
+ * Return: always 0.
  */
+
 int main(void)
 {
-	printf("with proper grammar, but the outcome is a piece of art,\n")
-		return (0);
+	puts("\"programming is like building multilingual puzzle");
+	return(0);
 }
 
