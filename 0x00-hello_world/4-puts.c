@@ -1,6 +1,7 @@
 #include<stdio.h>
 /**
- * main - A program that print a line with puts function
+ * main - prints "Program that prints a line with puts function
+ * puzzle followed by a newline."
  * Return : 0 (Success)
  */
 int main(void)
