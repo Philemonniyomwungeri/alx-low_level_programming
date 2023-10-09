@@ -2,7 +2,7 @@
 
 /**
  * main - prints "with proper grammar,but the outcome
- * a piece of art,"
+ * a piece of art," followwed by a newlne.
  * This program prints a message using printf function
  * Return: Always 0 (Success)
  */
