@@ -1,19 +1,15 @@
-#include<stdio.h>
+#include <stdio.h>
 
 /**
- * main - A program that prints the size of various computer types
- *This program prints the size of various computer types
- * (char, int, long int, long long int, float) on the computer it is 
- * compiled and run on. It demonstrates the usage of the sizeof operator 
- * to determine the size of different data types in bytes.
+ * main - A Program that prints the size of various computer types
  * Return 0 (Success)
  */
 int main(void)
-{
+{ 
 char a;
 int b;
 long int c;
-lon long int d;
+long long int d;
 float f;
 
 printf("Size of a char: %lu byte(s)\n", (unisigned long)sizeof(a));
