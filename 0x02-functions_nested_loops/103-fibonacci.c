@@ -1,15 +1,15 @@
-#include "main.h"
+#include <stdio.h>
 
 /**
- * print_fibonacci_sum - Prints the sum of even-valued Fibonacci terms
- * whose values do not exceed 4,000,000.
- * @limit: The upper limit for Fibonacci terms.
+ * main - Entry point
+ *
+ * Return: Always 0
  */
-void print_fibonacci_sum(int limit)
+int main(void)
 {
-    long int prev = 1, curr = 2, next, sum = 2;
+    int prev = 1, curr = 2, next, sum = 2;
 
-    while (curr <= limit)
+    while (curr <= 4000000)
     {
         next = prev + curr;
         if (next % 2 == 0)
@@ -20,6 +20,8 @@ void print_fibonacci_sum(int limit)
         curr = next;
     }
 
-    printf("%ld\n", sum);
+    printf("%d\n", sum);
+
+    return (0);
 }
 
