@@ -1,8 +1,7 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-int _putchar(char c);
-void print_times_table(int n);
+#include <stdio.h>
 
 #endif /* MAIN_H */
 
