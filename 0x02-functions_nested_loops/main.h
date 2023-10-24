@@ -3,7 +3,8 @@
 
 #include <stdio.h>
 
-void print_fibonacci(void);
+int _putchar(char c);
+void print_fibonacci_sum(int limit);
 
 #endif /* MAIN_H */
 
