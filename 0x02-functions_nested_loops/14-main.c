@@ -7,7 +7,6 @@
  */
 int main(void)
 {
-    print_fibonacci_sum(4000000);
     return (0);
 }
 

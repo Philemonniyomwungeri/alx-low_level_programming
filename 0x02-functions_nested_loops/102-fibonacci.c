@@ -1,3 +1,4 @@
+#include "main.h"
 #include <stdio.h>
 
 /**
@@ -7,14 +8,15 @@
  */
 int main(void)
 {
-    int prev = 1, curr = 2, next, count;
+    int i, n = 50;
+    long int prev = 1, curr = 2, next;
 
-    printf("%d, %d", prev, curr);
+    printf("%ld, %ld", prev, curr);
 
-    for (count = 3; count <= 50; count++)
+    for (i = 3; i <= n; ++i)
     {
         next = prev + curr;
-        printf(", %d", next);
+        printf(", %ld", next);
         prev = curr;
         curr = next;
     }
