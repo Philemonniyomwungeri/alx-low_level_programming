@@ -20,4 +20,3 @@ void print_fibonacci(void)
 
     printf("\n");
 }
-
