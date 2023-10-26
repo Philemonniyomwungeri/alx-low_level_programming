@@ -1,39 +1,22 @@
 #include "main.h"
-#include <stdio.h>
+#include <stdio.h> /* Include the standard I/O header file */
 
 /**
  * main - Entry point
  *
- * Return: Always 0
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
-    int n, result;
+	int n = 11;
+	int result;
 
-    n = 1;
-    result = is_prime_number(n);
-    printf("%d is prime: %d\n", n, result);
+	result = is_prime_number(n);
+	if (result == 1)
+		printf("%d is a prime number\n", n);
+	else
+		printf("%d is not a prime number\n", n);
 
-    n = 16;
-    result = is_prime_number(n);
-    printf("%d is prime: %d\n", n, result);
-
-    n = 113;
-    result = is_prime_number(n);
-    printf("%d is prime: %d\n", n, result);
-
-    n = 7919;
-    result = is_prime_number(n);
-    printf("%d is prime: %d\n", n, result);
-
-    n = 0;
-    result = is_prime_number(n);
-    printf("%d is prime: %d\n", n, result);
-
-    n = -1;
-    result = is_prime_number(n);
-    printf("%d is prime: %d\n", n, result);
-
-    return (0);
+	return (0);
 }
 
