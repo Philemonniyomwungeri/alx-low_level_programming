@@ -1,8 +1,10 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-int is_prime_number(int n);
-int _putchar(char c);
+#include <stddef.h>
+
+int _strlen(char *s);
+int is_palindrome(char *s);
 
 #endif /* MAIN_H */
 
