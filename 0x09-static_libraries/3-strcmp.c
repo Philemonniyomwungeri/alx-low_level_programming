@@ -1,20 +1,34 @@
-#include "main.h"
+#include <stdio.h>
 
 /**
  * _strcmp - Compares two strings.
- * @s1: The first string to be compared.
- * @s2: The second string to be compared.
- * Return: 0 if the strings are equal,
- * otherwise the difference between the ASCII values of the first
- * differing characters.
+ * @s1: First string
+ * @s2: Second string
+ * Return: 0 if s1 and s2 are equal, a negative value if s1 is less than s2,
+ *         or a positive value if s1 is greater than s2.
  */
-int _strcmp(char *s1, char *s2)
+int _strcmp(const char *s1, const char *s2)
 {
-	int i;
+	while (*s1 && (*s1 == *s2))
+	{
+		s1++;
+		s2++;
+	}
+	return (*(unsigned char *)s1 - *(unsigned char *)s2);
+}
 
-	for (i = 0; s1[i] != '\0' && s2[i] != '\0' && s1[i] == s2[i]; i++)
-		;
+/**
+ * main - Entry point
+ * Return: Always 0 (Success)
+ */
+int main(void)
+{
+	const char *s1 = "Hello";
+	const char *s2 = "World";
 
-	return (s1[i] - s2[i]);
+	int result = _strcmp(s1, s2);
+	printf("Comparison result: %d\n", result);
+
+	return (0);
 }
 

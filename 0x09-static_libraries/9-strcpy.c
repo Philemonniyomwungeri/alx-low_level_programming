@@ -1,21 +1,35 @@
-#include "main.h"
+#include <stdio.h>
 
 /**
- * _strcpy - Copies the string pointed to by src to the buffer dest
+ * _strcpy - Copies a string to a buffer.
  * @dest: Destination buffer
  * @src: Source string
- * Return: Pointer to dest
+ * Return: Pointer to destination buffer
  */
-char *_strcpy(char *dest, char *src)
+char *_strcpy(char *dest, const char *src)
 {
-    int i = 0;
+	int i;
 
-    while (src[i] != '\0')
-    {
-        dest[i] = src[i];
-        i++;
-    }
-    dest[i] = '\0'; // Null-terminate the destination string
-    return dest;
+	for (i = 0; src[i] != '\0'; i++)
+		dest[i] = src[i];
+
+	dest[i] = '\0';
+
+	return (dest);
+}
+
+/**
+ * main - Entry point
+ * Return: Always 0 (Success)
+ */
+int main(void)
+{
+	const char *source = "Hello, Betty!";
+	char destination[20];
+
+	_strcpy(destination, source);
+	printf("Copied string: %s\n", destination);
+
+	return (0);
 }
 
