@@ -1,24 +1,30 @@
-#include "main.h"
-#include <stdio.h>
+#ifndef MAIN_H
+#define MAIN_H
 
 /**
- * main - Entry point
+ * multiply - Multiplies two large numbers represented as strings.
+ * @num1: The first number as a string.
+ * @num2: The second number as a string.
  *
- * @argc: Number of arguments
- * @argv: Array of arguments
- *
- * Return: 0 on success, 98 on incorrect number of arguments,
- *         or 98 on arguments containing non-digit characters.
+ * Return: A pointer to the resulting product as a string.
  */
-int main(int argc, char *argv[])
-{
-	if (argc != 3 || !_isdigit(argv[1]) || !_isdigit(argv[2]))
-	{
-		printf("Error\n");
-		return (98);
-	}
+char *multiply(char *num1, char *num2);
 
-	multiply(argv[1], argv[2]);
-	return (0);
-}
+/**
+ * _isdigit - Checks if a string consists of only digits.
+ * @str: The string to check.
+ *
+ * Return: 1 if the string consists of only digits, 0 otherwise.
+ */
+int _isdigit(char *str);
+
+/**
+ * _strlen - Computes the length of a string.
+ * @str: The string to measure.
+ *
+ * Return: The length of the string.
+ */
+int _strlen(char *str);
+
+#endif /* MAIN_H */
 
