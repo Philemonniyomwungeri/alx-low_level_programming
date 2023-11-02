@@ -3,7 +3,8 @@
 
 #include <stdlib.h>
 
-void *malloc_checked(unsigned int b);
+/* Function prototypes */
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 
 #endif /* MAIN_H */
 
