@@ -1,10 +1,10 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-#include <stdlib.h>
-
-/* Function prototypes */
-void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
+int _putchar(char c);
+int _isdigit(char *str);
+int _strlen(char *str);
+void multiply(char *num1, char *num2);
 
 #endif /* MAIN_H */
 

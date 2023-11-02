@@ -1,22 +1,24 @@
+#include "main.h"
 #include <stdio.h>
-#include <stdlib.h>
 
 /**
- * main - Entry point of the program
- * @argc: Number of command-line arguments
- * @argv: Array of command-line arguments
- * Return: 0 on success, 98 on incorrect number of arguments, 98 on invalid input
+ * main - Entry point
+ *
+ * @argc: Number of arguments
+ * @argv: Array of arguments
+ *
+ * Return: 0 on success, 98 on incorrect number of arguments,
+ *         or 98 on arguments containing non-digit characters.
  */
 int main(int argc, char *argv[])
 {
-	if (argc != 3)
+	if (argc != 3 || !_isdigit(argv[1]) || !_isdigit(argv[2]))
 	{
 		printf("Error\n");
-		exit(98);
+		return (98);
 	}
 
-	/* Call your multiplication function here and print the result */
-
+	multiply(argv[1], argv[2]);
 	return (0);
 }
 
