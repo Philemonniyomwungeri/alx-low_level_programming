@@ -2,80 +2,98 @@
 #include <stdlib.h>
 
 /**
- * _isdigit - Checks if a character is a digit (0 through 9)
- * @c: The character to be checked
- * Return: 1 if the character is a digit, 0 otherwise
+ * multiply - Multiplies two positive numbers represented as strings
+ * @num1: First number as string
+ * @num2: Second number as string
+ * Return: Pointer to the result of multiplication as a string
  */
-int _isdigit(char c)
+char *multiply(char *num1, char *num2)
 {
-	return (c >= '0' && c <= '9');
+    int len1 = 0, len2 = 0, i, j, carry = 0;
+    char *result;
+
+    while (num1[len1] != '\0')
+        len1++;
+    while (num2[len2] != '\0')
+        len2++;
+
+    result = malloc(sizeof(char) * (len1 + len2 + 1));
+    if (result == NULL)
+    {
+        fprintf(stderr, "Error: Memory allocation failed\n");
+        exit(EXIT_FAILURE);
+    }
+
+    for (i = 0; i < len1 + len2; i++)
+        result[i] = '0';
+    result[i] = '\0';
+
+    for (i = len1 - 1; i >= 0; i--)
+    {
+        int n1 = num1[i] - '0';
+        carry = 0;
+
+        for (j = len2 - 1; j >= 0; j--)
+        {
+            int n2 = num2[j] - '0';
+            int sum = (n1 * n2) + (result[i + j + 1] - '0') + carry;
+            carry = sum / 10;
+            result[i + j + 1] = (sum % 10) + '0';
+        }
+
+        result[i + j + 1] += carry;
+    }
+
+    int start = 0;
+    while (result[start] == '0')
+        start++;
+
+    for (i = 0; i < len1 + len2 - start + 1; i++)
+        result[i] = result[i + start];
+    result[i] = '\0';
+
+    return result;
 }
 
 /**
- * _strlen - Computes the length of a string
- * @s: The input string
- * Return: Length of the string
- */
-int _strlen(char *s)
-{
-	int length = 0;
-
-	while (s[length] != '\0')
-		length++;
-	return (length);
-}
-
-/**
- * main - Entry point of the program
+ * main - Entry point
  * @argc: Number of command-line arguments
- * @argv: Array of command-line arguments
- * Return: 0 on success, 98 on incorrect number of arguments, 98 on invalid input
+ * @argv: Array containing the command-line arguments
+ * Return: 0 if successful, 1 if incorrect number of arguments, 98 if invalid input
  */
 int main(int argc, char *argv[])
 {
-	int i, j, len1, len2, carry, mul, sum;
-	int *result;
+    if (argc != 3)
+    {
+        fprintf(stderr, "Error: Incorrect number of arguments\n");
+        return (EXIT_FAILURE);
+    }
 
-	if (argc != 3)
-	{
-		printf("Error\n");
-		exit(98);
-	}
+    char *num1 = argv[1];
+    char *num2 = argv[2];
 
-	len1 = _strlen(argv[1]);
-	len2 = _strlen(argv[2]);
-	result = malloc(sizeof(int) * (len1 + len2));
-	if (result == NULL)
-	{
-		printf("Error\n");
-		exit(98);
-	}
+    for (int i = 0; num1[i] != '\0'; i++)
+    {
+        if (num1[i] < '0' || num1[i] > '9')
+        {
+            fprintf(stderr, "Error: Invalid input, num1\n");
+            return (EXIT_FAILURE);
+        }
+    }
 
-	for (i = 0; i < len1 + len2; i++)
-		result[i] = 0;
+    for (int i = 0; num2[i] != '\0'; i++)
+    {
+        if (num2[i] < '0' || num2[i] > '9')
+        {
+            fprintf(stderr, "Error: Invalid input, num2\n");
+            return (EXIT_FAILURE);
+        }
+    }
 
-	for (i = len1 - 1; i >= 0; i--)
-	{
-		carry = 0;
-		for (j = len2 - 1; j >= 0; j--)
-		{
-			mul = (argv[1][i] - '0') * (argv[2][j] - '0');
-			sum = mul + result[i + j + 1] + carry;
-			result[i + j + 1] = sum % 10;
-			carry = sum / 10;
-		}
-		result[i + j + 1] = carry;
-	}
+    char *result = multiply(num1, num2);
+    printf("%s\n", result);
+    free(result);
 
-	for (i = 0; i < len1 + len2; i++)
-	{
-		if (i == 0 && result[i] == 0)
-			continue;
-		printf("%d", result[i]);
-	}
-	printf("\n");
-
-	free(result);
-	return (0);
+    return (EXIT_SUCCESS);
 }
 
