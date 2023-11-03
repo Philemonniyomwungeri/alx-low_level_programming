@@ -1,30 +1,47 @@
-#ifndef MAIN_H
-#define MAIN_H
+#include "main.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 /**
- * multiply - Multiplies two large numbers represented as strings.
- * @num1: The first number as a string.
- * @num2: The second number as a string.
- *
- * Return: A pointer to the resulting product as a string.
+ * _isdigit - Checks if a character is a digit (0 through 9).
+ * @c: The character to be checked.
+ * Return: 1 if c is a digit, 0 otherwise.
  */
-char *multiply(char *num1, char *num2);
+int _isdigit(char c)
+{
+	return (c >= '0' && c <= '9');
+}
 
 /**
- * _isdigit - Checks if a string consists of only digits.
- * @str: The string to check.
- *
- * Return: 1 if the string consists of only digits, 0 otherwise.
+ * main - Multiplies two positive numbers.
+ * @argc: Number of arguments.
+ * @argv: Array of arguments.
+ * Return: 0 if successful, 98 if incorrect number of arguments or non-digit input.
  */
-int _isdigit(char *str);
+int main(int argc, char *argv[])
+{
+	int i, j, result;
 
-/**
- * _strlen - Computes the length of a string.
- * @str: The string to measure.
- *
- * Return: The length of the string.
- */
-int _strlen(char *str);
+	if (argc != 3)
+	{
+		printf("Error\n");
+		return (98);
+	}
 
-#endif /* MAIN_H */
+	for (i = 1; i < argc; i++)
+	{
+		for (j = 0; argv[i][j] != '\0'; j++)
+		{
+			if (!_isdigit(argv[i][j]))
+			{
+				printf("Error\n");
+				return (98);
+			}
+		}
+	}
+
+	result = atoi(argv[1]) * atoi(argv[2]);
+	printf("%d\n", result);
+	return (0);
+}
 
