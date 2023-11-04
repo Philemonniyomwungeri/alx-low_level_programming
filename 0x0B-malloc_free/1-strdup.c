@@ -1,13 +1,13 @@
+#include "main.h"
 #include <stdlib.h>
 
 /**
- * custom_strdup - Returns a pointer to a newly allocated space in memory,
- *                 which contains a copy of the string given as a parameter.
- * @str: The string to duplicate.
+ * _strdup - Duplicates a string using malloc.
+ * @str: The input string.
  *
- * Return: A pointer to the duplicated string, or NULL if memory allocation fails.
+ * Return: A pointer to the duplicated string, or NULL if insufficient memory.
  */
-char *custom_strdup(char *str)
+char *_strdup(char *str)
 {
 	char *duplicate;
 	unsigned int i, length = 0;
@@ -18,7 +18,7 @@ char *custom_strdup(char *str)
 	while (str[length] != '\0')
 		length++;
 
-	duplicate = malloc((length + 1) * sizeof(char));
+	duplicate = malloc(sizeof(char) * (length + 1));
 
 	if (duplicate == NULL)
 		return (NULL);

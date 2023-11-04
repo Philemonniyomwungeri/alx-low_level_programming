@@ -2,13 +2,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-char *custom_strdup(char *str);
-
+/**
+ * main - Entry point.
+ *
+ * Return: Always 0.
+ */
 int main(void)
 {
 	char *s;
 
-	s = custom_strdup("ALX SE");
+	s = _strdup("ALX SE");
 	if (s == NULL)
 	{
 		printf("failed to allocate memory\n");
