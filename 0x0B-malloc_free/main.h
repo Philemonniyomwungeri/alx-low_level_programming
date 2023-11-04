@@ -1,10 +1,7 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-#include <stdlib.h>
-
-/* Function prototypes */
-char *str_concat(char *s1, char *s2);
+int **alloc_grid(int width, int height);
 
 #endif /* MAIN_H */
 
