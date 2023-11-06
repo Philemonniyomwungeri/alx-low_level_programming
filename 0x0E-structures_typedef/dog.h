@@ -17,5 +17,13 @@ struct dog
 };
 /* Function prototype for init_dog */
 void init_dog(struct dog *d, char *name, float age, char *owner);
+/**
+ * print_dog - Prints the information of a struct dog
+ * @d: Pointer to the struct dog to be printed
+ *
+ * Description: This function prints the name, age, and owner of a struct dog.
+ * If any element of the struct is NULL, it prints "(nil)" instead.
+ */
+void print_dog(struct dog *d);
 
 #endif /* DOG_H */
