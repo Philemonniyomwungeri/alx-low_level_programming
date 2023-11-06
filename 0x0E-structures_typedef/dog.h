@@ -29,5 +29,7 @@ void init_dog(struct dog *d, char *name, float age, char *owner);
  * If any element of the struct is NULL, it prints "(nil)" instead.
  */
 void print_dog(struct dog *d);
+/* Function prototype for creating a new dog */
+dog_t *new_dog(char *name, float age, char *owner);
 
 #endif /* DOG_H */
