@@ -9,5 +9,7 @@ int main(int argc, char *argv[]);  /* Prototype for the main function */
 /* If you plan to use _putchar, include its prototype here */
 int _putchar(char c);
 
+int main(int argc, char *argv[]);
+
 #endif /* MAIN_H */
 
