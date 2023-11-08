@@ -13,7 +13,7 @@ void print_name(char *name, void (*f)(char *))
 {
 	if (name != NULL && f != NULL)
 	{
-		f(name); /* Call the function pointed by the function pointer with the name parameter */
+		f(name); /* Call function pointed function pointer with the name parameter*/
 	}
 }
 
